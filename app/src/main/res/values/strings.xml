@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">MyChatApp_FinalProject</string>
+    <!-- UI -->
+    <string name="app_name">Chat App</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <!-- Splash screen -->
+    <string name="placeholder_description">Image</string>
+
 </resources>
