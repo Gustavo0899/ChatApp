@@ -27,12 +27,16 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     buildFeatures {
-        viewBinding true
+        viewBinding = true
     }
 }
 
 dependencies {
+    /* glide */
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.0'
+    implementation 'com.github.bumptech.glide:glide:4.15.0'
 
+    /* android resources and testing */
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
