@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+cloud "Firebase" {
+database "Firestore" as FS {
+  folder "User" {
+  json User2 {
+    "username": "Bob",
+    "email": "bob@gmail.com",
+    "password": "huw9821hjb"
+  }
+  json User1 {
+    "username": "Alice",
+    "email": "alice@gmail.com",
+    "password": "675gtjsw"
+  }
+}
+}
+}
+
+interface "FirestoreAPI" as FireAPI
+component ChatApp as App
+
+App - FireAPI
+FireAPI --- FS
+
+@enduml
