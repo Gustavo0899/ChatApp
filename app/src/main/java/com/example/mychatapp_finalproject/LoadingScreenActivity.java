@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.mychatapp_finalproject.databinding.ActivityLoadingScreenBinding;
+import com.example.mychatapp_finalproject.ui.home.LoginActivity;
 
 public class LoadingScreenActivity extends AppCompatActivity {
 
@@ -33,7 +34,7 @@ public class LoadingScreenActivity extends AppCompatActivity {
     }
 
     private void startMainActivity() {
-        Intent i = new Intent(LoadingScreenActivity.this, MainActivity.class);
+        Intent i = new Intent(LoadingScreenActivity.this, LoginActivity.class);
         startActivity(i);
     }
 
