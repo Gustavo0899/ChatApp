@@ -55,11 +55,11 @@ dependencies {
     /* Awesome Validation */
     implementation 'com.basgeekball:awesome-validation:4.3'
 
-    /* Firebase dependecies */
+    /* Firebase dependencies */
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation platform('com.google.firebase:firebase-bom:32.0.0')
     implementation 'com.google.firebase:firebase-firestore'
     implementation 'com.google.firebase:firebase-database'
-    implementation 'com.google.firebase:firebase-auth'
-    implementation 'com.firebaseui:firebase-ui-auth'
+    implementation 'com.google.firebase:firebase-auth:22.0.0'
+    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
 }
