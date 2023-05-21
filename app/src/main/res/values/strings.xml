@@ -6,11 +6,8 @@
     <string name="title_notifications">Notifications</string>
     <string name="invalid_email">Incorrect e-mail address</string>
     <string name="invalid_password">Password must be 6 or more characters</string>
-
+    <string name="err_name">Invalid Username, it should only contain letters</string>
     <!-- Splash screen -->
     <string name="placeholder_description">Image</string>
-
-    <!-- Chat convo -->
-    <string name="chat_convo_text">Chat convo</string>
 
 </resources>

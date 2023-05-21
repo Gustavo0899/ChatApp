@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
@@ -30,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     EditText et_email, et_pass;
     Button btn_signup,btn_forgetPass,btn_login;
+    TextView txt_signup,txt_forgot_password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +45,12 @@ public class LoginActivity extends AppCompatActivity {
 
         et_email = findViewById(R.id.et_Email);
         et_pass = findViewById(R.id.et_Pass);
-        btn_signup = findViewById(R.id.btnSignUp);
+        txt_signup = findViewById(R.id.txt_signup);
         btn_login = findViewById(R.id.btnLogin);
-        btn_forgetPass = findViewById(R.id.btnForgetPassword);
+        //btn_forgetPass = findViewById(R.id.txt_forgot_password);
 
 
-        btn_signup.setOnClickListener(new View.OnClickListener() {
+        txt_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(LoginActivity.this, SignUpActivity.class);
@@ -80,12 +82,12 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-        btn_forgetPass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+//        btn_forgetPass.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
     }
 //    private void toHome(){
 //        Intent x = new Intent(LoginActivity.this, MainActivity.class);
