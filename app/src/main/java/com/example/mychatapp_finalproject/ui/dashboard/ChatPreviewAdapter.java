@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mychatapp_finalproject.R;
-import com.example.mychatapp_finalproject.ui.home.SignUpActivity;
+import com.example.mychatapp_finalproject.ui.chat.ChatConvoActivity;
 
 import java.util.List;
 
@@ -45,7 +45,7 @@ public class ChatPreviewAdapter extends RecyclerView.Adapter<ChatPreviewAdapter.
             @Override
             public void onClick(View v) {
                 Log.d("Dashboard Fragment","OnItemClick");
-                Intent intent = new Intent(context, SignUpActivity.class);
+                Intent intent = new Intent(context, ChatConvoActivity.class);
                 context.startActivity(intent);
             }
         });
