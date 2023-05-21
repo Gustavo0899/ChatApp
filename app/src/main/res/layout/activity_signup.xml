@@ -35,21 +35,40 @@
 <!--        android:backgroundTint="@color/white"-->
 <!--        android:textColor="@color/white"/>-->
     <TextView
+        android:id="@+id/Txt_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="101dp"
+        android:textColor="@color/white"/>
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="Username"
+        android:textColorHint="@color/gray"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/white"/>
+    <TextView
         android:id="@+id/secTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
         android:textSize="16sp"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="101dp"
         android:textColor="@color/white"/>
 
     <EditText
         android:id="@+id/et_Email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
+        android:layout_gravity="center"
         android:ems="10"
-        android:hint="email"
+        android:hint="Email"
         android:textColorHint="@color/gray"
         android:backgroundTint="@color/white"
         android:textColor="@color/white"/>
@@ -60,17 +79,30 @@
         android:layout_height="wrap_content"
         android:text="Password"
         android:textSize="16dp"
-        android:layout_marginLeft="100dp"
+        android:layout_marginStart="101dp"
         android:textColor="@color/white"/>
 
     <EditText
         android:id="@+id/et_Pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
+        android:layout_gravity="center"
         android:inputType="textPassword"
         android:ems="10"
-        android:hint="password"
+        android:hint="Password"
+        android:textColorHint="@color/gray"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/et_Pass2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:layout_marginTop="5dp"
         android:textColorHint="@color/gray"
         android:backgroundTint="@color/white"
         android:textColor="@color/white" />
