@@ -18,7 +18,7 @@ import com.example.mychatapp_finalproject.databinding.FragmentDashboardBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DashboardFragment extends Fragment implements ChatPreviewAdapter.OnItemClickListener {
+public class DashboardFragment extends Fragment {
     private FragmentDashboardBinding binding;
     private RecyclerView recyclerView;
     private ChatPreviewAdapter adapter;
@@ -47,14 +47,8 @@ public class DashboardFragment extends Fragment implements ChatPreviewAdapter.On
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         textItems = new ArrayList<>();
-        adapter = new ChatPreviewAdapter(textItems, this);
+        adapter = new ChatPreviewAdapter(textItems, getContext());
         recyclerView.setAdapter(adapter);
-    }
-
-    @Override
-    public void onItemClick(String text) {
-        // launch new fragment
-        // ChatConvoFragment chatConvoFragment = new ChatConvoFragment();
     }
 
     @Override

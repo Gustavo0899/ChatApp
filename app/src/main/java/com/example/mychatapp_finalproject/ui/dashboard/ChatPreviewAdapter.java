@@ -1,25 +1,31 @@
 package com.example.mychatapp_finalproject.ui.dashboard;
 
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mychatapp_finalproject.R;
+import com.example.mychatapp_finalproject.ui.home.SignUpActivity;
 
 import java.util.List;
 
 public class ChatPreviewAdapter extends RecyclerView.Adapter<ChatPreviewAdapter.ViewHolder>{
     private final List<String> textItems;
-    private final OnItemClickListener clickListener;
 
-    public ChatPreviewAdapter(List<String> itemList, ChatPreviewAdapter.OnItemClickListener clickListener) {
+    private final Context context;
+
+    public ChatPreviewAdapter(List<String> itemList, Context context) {
         this.textItems = itemList;
-        this.clickListener = clickListener;
+        this.context = context;
     }
 
     // inflates the main layout container for views
@@ -35,6 +41,14 @@ public class ChatPreviewAdapter extends RecyclerView.Adapter<ChatPreviewAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String text = textItems.get(position);
         holder.chatPrevUsername.setText(text);
+        holder.chatPreview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("Dashboard Fragment","OnItemClick");
+                Intent intent = new Intent(context, SignUpActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -42,10 +56,12 @@ public class ChatPreviewAdapter extends RecyclerView.Adapter<ChatPreviewAdapter.
         return textItems.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView chatPrevUsername;
         TextView chatPrevMessage;
         ImageView profilePic;
+
+        LinearLayout chatPreview;
 
         // initializing views to be used in the constructor
         public ViewHolder(@NonNull View itemView) {
@@ -53,19 +69,7 @@ public class ChatPreviewAdapter extends RecyclerView.Adapter<ChatPreviewAdapter.
             chatPrevUsername = itemView.findViewById(R.id.chat_prev_username);
             chatPrevMessage = itemView.findViewById(R.id.chat_prev_message);
             profilePic = itemView.findViewById(R.id.profile_pic);
+            chatPreview = itemView.findViewById(R.id.ChatPreview);
         }
-
-        @Override
-        public void onClick(View v) {
-            int position = getAdapterPosition();
-            if (position != RecyclerView.NO_POSITION) {
-                String text = textItems.get(position);
-                clickListener.onItemClick(text);
-            }
-        }
-    }
-
-    public interface OnItemClickListener {
-        void onItemClick(String text);
     }
 }
