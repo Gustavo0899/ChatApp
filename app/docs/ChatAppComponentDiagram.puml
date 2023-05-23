@@ -2,26 +2,34 @@
 'https://plantuml.com/component-diagram
 
 cloud "Firebase" {
+component "Authentication" {
+}
+
 database "Firestore" as FS {
   folder "User" {
   json User2 {
     "username": "Bob",
     "email": "bob@gmail.com",
-    "password": "huw9821hjb"
+    "password": "huw9821hjb",
+    "contacts": "[User1, User3, ..., n]"
   }
   json User1 {
     "username": "Alice",
     "email": "alice@gmail.com",
-    "password": "675gtjsw"
+    "password": "675gtjsw",
+    "contacts": "[User2, User3, ..., n]"
   }
 }
 }
 }
 
 interface "FirestoreAPI" as FireAPI
+interface "FirebaseAuth" as FireAuth
 component ChatApp as App
 
-App - FireAPI
+App -- FireAPI
+App -- FireAuth
+FireAuth - "Authentication"
 FireAPI --- FS
 
 @enduml
