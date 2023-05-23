@@ -14,11 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mychatapp_finalproject.R;
 import com.example.mychatapp_finalproject.databinding.FragmentDashboardBinding;
+import com.example.mychatapp_finalproject.ui.dialog.AddContactDialogFragment;
+import com.example.mychatapp_finalproject.ui.dialog.DialogButtonClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DashboardFragment extends Fragment {
+public class DashboardFragment extends Fragment implements DialogButtonClickListener {
     private FragmentDashboardBinding binding;
     private RecyclerView recyclerView;
     private ChatPreviewAdapter adapter;
@@ -36,7 +38,7 @@ public class DashboardFragment extends Fragment {
         binding.addContactFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addItem();
+               showAddContactDialog();
             }
         });
 
@@ -57,7 +59,8 @@ public class DashboardFragment extends Fragment {
         binding = null;
     }
 
-    private void addItem() {
+    @Override
+    public void onButtonClicked() {
         // get the necessary data and add it to the string list
         textItems.add(0, "User1");
 
@@ -66,5 +69,10 @@ public class DashboardFragment extends Fragment {
 
         // scroll to the top of the recyclerView to show added item
         recyclerView.scrollToPosition(0);
+    }
+
+    private void showAddContactDialog() {
+        AddContactDialogFragment dialogFragment = new AddContactDialogFragment(DashboardFragment.this);
+        dialogFragment.show(getActivity().getSupportFragmentManager(), AddContactDialogFragment.TAG);
     }
 }

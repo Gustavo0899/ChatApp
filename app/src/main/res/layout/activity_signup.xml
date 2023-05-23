@@ -6,11 +6,11 @@
     android:background="@color/blue_dark_background">
 
     <TextView
-        android:id="@+id/loginscrn"
+        android:id="@+id/login_screen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:textSize="25sp"
         android:textStyle="bold"
         android:layout_gravity="center"
@@ -35,10 +35,10 @@
 <!--        android:backgroundTint="@color/white"-->
 <!--        android:textColor="@color/white"/>-->
     <TextView
-        android:id="@+id/Txt_username"
+        android:id="@+id/txt_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username"
+        android:text="@string/username_word"
         android:textSize="16sp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="101dp"
@@ -49,74 +49,75 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
-        android:hint="Username"
+        android:hint="@string/username"
+        android:inputType="textPersonName"
         android:textColorHint="@color/gray"
         android:backgroundTint="@color/white"
         android:textColor="@color/white"/>
     <TextView
-        android:id="@+id/secTxt"
+        android:id="@+id/sec_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="@string/email_word"
         android:textSize="16sp"
         android:layout_marginStart="101dp"
         android:textColor="@color/white"/>
 
     <EditText
-        android:id="@+id/et_Email"
+        android:id="@+id/et_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
-        android:hint="Email"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
         android:textColorHint="@color/gray"
         android:backgroundTint="@color/white"
         android:textColor="@color/white"/>
 
     <TextView
-        android:id="@+id/thirdTxt"
+        android:id="@+id/third_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Password"
-        android:textSize="16dp"
+        android:text="@string/password_word"
+        android:textSize="16sp"
         android:layout_marginStart="101dp"
         android:textColor="@color/white"/>
 
     <EditText
-        android:id="@+id/et_Pass"
+        android:id="@+id/et_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:inputType="textPassword"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:textColorHint="@color/gray"
         android:backgroundTint="@color/white"
         android:textColor="@color/white" />
 
     <EditText
-        android:id="@+id/et_Pass2"
+        android:id="@+id/et_pass2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:inputType="textPassword"
         android:ems="10"
-        android:hint="Confirm Password"
+        android:hint="@string/confirm_password"
         android:layout_marginTop="5dp"
         android:textColorHint="@color/gray"
         android:backgroundTint="@color/white"
         android:textColor="@color/white" />
 
     <Button
-        android:id="@+id/btnSignUp"
+        android:id="@+id/btn_sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_gravity="center"
-        android:text="Sign up"
+        android:text="@string/sign_up"
         android:ems="8"
         android:textColor="@color/black"
         android:backgroundTint="@color/cyan_secondary"/>
-
 
 </LinearLayout>
