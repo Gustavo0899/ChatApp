@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="4dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ProfilePic"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:scaleType="centerCrop"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/sentMessage"/>
+
+    <TextView
+        android:id="@+id/sentMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_sent_message"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:padding="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/ProfilePic"
+        android:text="Avemaria porfavor funciona"/>
+    
+    <TextView
+        android:id="@+id/textDateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:layout_below="@+id/sentMessage"
+        android:layout_alignEnd="@+id/sentMessage"
+        android:text="23/05/2023 - 5:22 PM"/>
+
+</RelativeLayout>

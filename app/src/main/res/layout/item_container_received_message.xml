@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ProfilePic"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:scaleType="centerCrop"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/receivedMessage"/>
+
+    <TextView
+        android:id="@+id/receivedMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_received_message"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:padding="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/ProfilePic"
+        android:text="Aleluya Aleluya"/>
+
+    <TextView
+        android:id="@+id/textDateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:layout_below="@+id/receivedMessage"
+        android:layout_alignStart="@+id/receivedMessage"
+        android:text="23/05/2023 - 6:07 PM"/>
+
+</RelativeLayout>
