@@ -11,6 +11,7 @@
         android:layout_height="40dp"
         android:background="@color/white"
         android:scaleType="centerCrop"
+        android:src="@drawable/ic_profile_pic"
         android:layout_alignParentEnd="true"
         android:layout_alignBottom="@+id/sentMessage"/>
 
