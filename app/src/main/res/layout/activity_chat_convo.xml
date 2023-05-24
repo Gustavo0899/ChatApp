@@ -2,7 +2,85 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConvoScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue_dark_background"
     tools:context=".ui.chat.ChatConvoActivity">
+
+    <View
+        android:id="@+id/ConvoBackground"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="620dp"
+        android:background="@drawable/convo_background"/>
+    
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/NameText"
+        android:background="@drawable/chat_background_buttons"
+        android:src="@drawable/ic_back"
+        android:tint="@color/white"/>
+    
+    <TextView
+        android:id="@+id/NameText"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_toStartOf="@+id/ProfilePic"
+        android:textColor="@color/white"
+        android:background="@drawable/chat_background_buttons"
+        android:gravity="center"
+        android:hint="@string/Username_Placeholder"
+        android:textSize="25sp"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ProfilePic"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/chat_background_buttons"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_profile_pic"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/NameText"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="631dp"
+        android:padding="15dp"
+        android:layout_alignTop="@+id/NameText"
+        android:layout_marginTop="50dp" />
+
+    <FrameLayout
+        android:id="@+id/imageSend"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:background="@drawable/chat_background_buttons"
+            android:src="@drawable/ic_send"
+            android:tint="@color/white"/>
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/inputMessage"
+        android:layout_width="375dp"
+        android:layout_height="50dp"
+        android:background="@drawable/chat_background_buttons"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:padding="15dp"
+        android:layout_toStartOf="@+id/imageSend"
+        android:layout_alignParentBottom="true"
+        android:hint="@string/Keyboard_Hint"/>
+
 </RelativeLayout>
