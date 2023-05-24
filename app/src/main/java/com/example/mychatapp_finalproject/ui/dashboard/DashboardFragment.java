@@ -71,6 +71,7 @@ public class DashboardFragment extends Fragment implements DialogButtonClickList
     public <T> void onButtonClicked(T userProfile) {
         // get the necessary data and add it to the string list
         userProfiles.add(0, (UserProfile) userProfile);
+        showContactsList();
 
         // notify the adapter that a new item has been added
         adapter.notifyItemInserted(0);
@@ -101,8 +102,7 @@ public class DashboardFragment extends Fragment implements DialogButtonClickList
                     if (userProfile.getContacts() != null) {
                         if (!userProfile.getContacts().isEmpty()) {
                             loadAllContactsOfUser(databaseHelper, userProfile);
-                            binding.noContactsToShowTv.setVisibility(View.GONE);
-                            recyclerView.setVisibility(View.VISIBLE);
+                            showContactsList();
                         } else {
                             showNoContactsToShowText();
                         }
@@ -129,5 +129,10 @@ public class DashboardFragment extends Fragment implements DialogButtonClickList
     private void showNoContactsToShowText() {
         binding.noContactsToShowTv.setVisibility(View.VISIBLE);
         recyclerView.setVisibility(View.GONE);
+    }
+
+    private void showContactsList() {
+        binding.noContactsToShowTv.setVisibility(View.GONE);
+        recyclerView.setVisibility(View.VISIBLE);
     }
 }
