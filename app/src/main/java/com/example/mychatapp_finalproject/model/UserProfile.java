@@ -9,7 +9,7 @@ public class UserProfile implements IModel {
     private String profilePictureId;
     private ArrayList<String> contacts;
 
-    UserProfile() { /* empty constructor required for some databases */}
+    public UserProfile() { /* empty constructor required for some databases */}
 
     @Override
     public String getId() {

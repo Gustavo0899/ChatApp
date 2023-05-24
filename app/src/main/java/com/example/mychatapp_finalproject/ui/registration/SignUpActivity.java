@@ -92,6 +92,7 @@ public class SignUpActivity extends AppCompatActivity {
             UserProfile userProfile = ServiceLocator.getInstance().getNewUserProfile();
             userProfile.setId(user.getUid());
             userProfile.setUsername(username);
+            userProfile.setEmail(user.getEmail());
             Log.d(TAG, "User id: " + user.getUid() + "\nUsername: " + username);
             databaseHelper.create(user.getUid(), Model.USER_PROFILE, userProfile);
             Log.d(TAG, "User profile created");
