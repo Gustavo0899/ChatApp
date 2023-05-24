@@ -24,16 +24,16 @@
         android:padding="10dp"
         android:layout_alignParentTop="true"
         android:layout_toStartOf="@+id/ProfilePic"
-        android:text="Avemaria porfavor funciona"/>
+        android:hint="@string/Sent_Message"/>
     
     <TextView
         android:id="@+id/textDateTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:textSize="10sp"
+        android:textSize="11sp"
         android:layout_below="@+id/sentMessage"
         android:layout_alignEnd="@+id/sentMessage"
-        android:text="23/05/2023 - 5:22 PM"/>
+        android:hint="@string/Sent_Date"/>
 
 </RelativeLayout>

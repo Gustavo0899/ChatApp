@@ -23,16 +23,16 @@
         android:padding="10dp"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/ProfilePic"
-        android:text="Aleluya Aleluya"/>
+        android:hint="@string/Received_Message"/>
 
     <TextView
         android:id="@+id/textDateTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:textSize="10sp"
+        android:textSize="11sp"
         android:layout_below="@+id/receivedMessage"
         android:layout_alignStart="@+id/receivedMessage"
-        android:text="23/05/2023 - 6:07 PM"/>
+        android:hint="@string/Received_Date"/>
 
 </RelativeLayout>

@@ -9,5 +9,11 @@
     <string name="err_name">Invalid Username, it should only contain letters</string>
     <!-- Splash screen -->
     <string name="placeholder_description">Image</string>
-
+    <!-- Chat screen -->
+    <string name="Keyboard_Hint">Type here</string>
+    <string name="Username_Placeholder">Username</string>
+    <string name="Sent_Message">Avemaria porfavor funciona</string>
+    <string name="Sent_Date">23/05/2023 - 5:22 PM</string>
+    <string name="Received_Message">Aleluya Aleluya</string>
+    <string name="Received_Date">23/05/2023 - 6:07 PM</string>
 </resources>
