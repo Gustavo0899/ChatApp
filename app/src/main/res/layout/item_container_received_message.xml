@@ -15,6 +15,16 @@
         android:layout_alignBottom="@+id/receivedMessage"/>
 
     <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/receivedMessage"
+        android:hint="@string/Username_Placeholder"/>
+
+    <TextView
         android:id="@+id/receivedMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +32,7 @@
         android:textColor="@color/white"
         android:textSize="15sp"
         android:padding="10dp"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/username"
         android:layout_toEndOf="@+id/ProfilePic"
         android:hint="@string/Received_Message"/>
 
