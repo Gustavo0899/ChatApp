@@ -3,18 +3,20 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_dark_background">
+
     <TextView
-        android:id="@+id/loginscrn"
+        android:id="@+id/login_screen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="110dp"
-        android:text="Login"
+        android:text="@string/login"
         android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/purple_primary"
         android:layout_gravity="center" />
+
     <TextView
-        android:id="@+id/fstTxt"
+        android:id="@+id/first_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
@@ -22,36 +24,37 @@
         android:layout_marginBottom="1dp"
         android:textSize="16sp"
         android:textColor="@color/white"
-        android:text="Email"/>
+        android:text="@string/email_word"/>
+
     <EditText
-        android:id="@+id/et_Email"
+        android:id="@+id/et_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="email"
+        android:hint="@string/email"
         android:textColor="@color/white"
         android:textColorHint="@color/gray"
         android:backgroundTint="@color/white"
+        android:inputType="textEmailAddress"
         android:ems="10"/>
 
     <TextView
-        android:id="@+id/secTxt"
+        android:id="@+id/sec_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
-        android:text="Password"
+        android:text="@string/password_word"
         android:textColor="@color/white"
         android:textSize="16sp" />
 
-
     <EditText
-        android:id="@+id/et_Pass"
+        android:id="@+id/et_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="@color/white"
         android:ems="10"
-        android:hint="password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:textColor="@color/white"
         android:textColorHint="@color/gray" />
@@ -61,28 +64,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:text="Forgot password?"
+        android:text="@string/forgot_password"
         android:textSize="14sp"
         android:gravity="center"
         />
-
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btn_login"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:text="Login"
+            android:text="@string/login"
             android:layout_gravity="center"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textColor="@color/black"
             android:backgroundTint="@color/cyan_secondary"/>
 
@@ -97,19 +96,14 @@
 <!--            android:textSize="16dp"-->
 <!--            android:textColor="@color/black"-->
 <!--            android:backgroundTint="@color/cyan_secondary"/>-->
-
         </LinearLayout>
-
-
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="75dp"
             android:layout_gravity="center_horizontal">
-
-
 
 <!--         <Button-->
 <!--                android:id="@+id/btnForgetPassword"-->
@@ -122,26 +116,22 @@
 <!--                android:textColor="@color/black"-->
 <!--                android:backgroundTint="@color/cyan_secondary"/>-->
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Don't have Account?"
+                android:text="@string/dont_have_account"
                 android:textColor="@color/gray"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/txt_signup"
+                android:id="@+id/txt_sign_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="Sign Up"
+                android:text="@string/sign_up"
                 android:layout_marginStart="10dp"
                 android:textSize="16sp" />
 
         </LinearLayout>
-<!--        </LinearLayout>-->
-        
-
 
 </LinearLayout>

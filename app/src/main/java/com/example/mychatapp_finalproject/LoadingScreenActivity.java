@@ -9,13 +9,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.mychatapp_finalproject.databinding.ActivityLoadingScreenBinding;
-import com.example.mychatapp_finalproject.ui.home.LoginActivity;
+import com.example.mychatapp_finalproject.ui.registration.LoginActivity;
 
 public class LoadingScreenActivity extends AppCompatActivity {
-
     ActivityLoadingScreenBinding binding;
-
     private final String TAG = "LoadingActivity";
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
