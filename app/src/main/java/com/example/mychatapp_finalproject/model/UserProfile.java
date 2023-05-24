@@ -5,8 +5,11 @@ import java.util.ArrayList;
 public class UserProfile implements IModel {
     private String id;
     private String username;
+    private String email;
     private String profilePictureId;
     private ArrayList<String> contacts;
+
+    UserProfile() { /* empty constructor required for some databases */}
 
     @Override
     public String getId() {
@@ -40,5 +43,13 @@ public class UserProfile implements IModel {
 
     public void setContacts(ArrayList<String> contacts) {
         this.contacts = contacts;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
