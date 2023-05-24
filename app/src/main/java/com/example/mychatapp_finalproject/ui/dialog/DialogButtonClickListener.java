@@ -1,5 +1,5 @@
 package com.example.mychatapp_finalproject.ui.dialog;
 
 public interface DialogButtonClickListener {
-        void onButtonClicked();
+        <T> void onButtonClicked(T username);
 }

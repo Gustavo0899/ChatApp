@@ -29,5 +29,6 @@
     <string name="add">Add</string>
     <string name="cancel">Cancel</string>
     <string name="contacts_email">Enter contact\'s email</string>
+    <string name="no_contacts_to_show">No contacts available to show</string>
 
 </resources>

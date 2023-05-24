@@ -1,5 +1,6 @@
 package com.example.mychatapp_finalproject.ui.dashboard;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -14,17 +15,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mychatapp_finalproject.R;
+import com.example.mychatapp_finalproject.model.UserProfile;
 import com.example.mychatapp_finalproject.ui.chat.ChatConvoActivity;
 
 import java.util.List;
 
 public class ChatPreviewAdapter extends RecyclerView.Adapter<ChatPreviewAdapter.ViewHolder>{
-    private final List<String> textItems;
-
+    private final List<UserProfile> userProfiles;
     private final Context context;
 
-    public ChatPreviewAdapter(List<String> itemList, Context context) {
-        this.textItems = itemList;
+    public ChatPreviewAdapter(List<UserProfile> itemList, Context context) {
+        this.userProfiles = itemList;
         this.context = context;
     }
 
@@ -39,13 +40,14 @@ public class ChatPreviewAdapter extends RecyclerView.Adapter<ChatPreviewAdapter.
     // sets the layout views to add them in the holder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String text = textItems.get(position);
-        holder.chatPrevUsername.setText(text);
+        UserProfile userProfile = userProfiles.get(position);
+        holder.chatPrevUsername.setText(userProfile.getUsername());
         holder.chatPreview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("Dashboard Fragment","OnItemClick");
                 Intent intent = new Intent(context, ChatConvoActivity.class);
+                intent.putExtra("CONTACT_ID", userProfile.getId());
                 context.startActivity(intent);
             }
         });
@@ -53,14 +55,20 @@ public class ChatPreviewAdapter extends RecyclerView.Adapter<ChatPreviewAdapter.
 
     @Override
     public int getItemCount() {
-        return textItems.size();
+        return userProfiles.size();
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void updateData(List<UserProfile> dataList) {
+        userProfiles.clear();
+        userProfiles.addAll(dataList);
+        notifyDataSetChanged();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView chatPrevUsername;
         TextView chatPrevMessage;
         ImageView profilePic;
-
         LinearLayout chatPreview;
 
         // initializing views to be used in the constructor
