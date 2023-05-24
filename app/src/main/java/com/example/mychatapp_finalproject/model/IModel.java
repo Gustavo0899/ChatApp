@@ -1,4 +1,4 @@
-package com.example.mychatapp_finalproject.common;
+package com.example.mychatapp_finalproject.model;
 
 public interface IModel {
     String getId();

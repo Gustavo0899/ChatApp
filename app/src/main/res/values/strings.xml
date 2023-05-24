@@ -4,11 +4,33 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="invalid_email">Incorrect e-mail address</string>
+    <string name="invalid_email">Incorrect email address</string>
     <string name="invalid_password">Password must be 6 or more characters</string>
     <string name="err_name">Invalid Username, it should only contain letters</string>
+
     <!-- Splash screen -->
     <string name="placeholder_description">Image</string>
+
+    <!-- Login and Sign up screens -->
+    <string name="dont_have_account">Don\'t have an Account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="password">Enter password</string>
+    <string name="password_word">Password</string>
+    <string name="email">Enter email</string>
+    <string name="email_word">Email</string>
+    <string name="username">Enter username</string>
+    <string name="username_word">Username</string>
+    <string name="confirm_password">Confirm password</string>
+
+    <!-- Add contact dialog -->
+    <string name="add_contact">Add New Contact</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="contacts_email">Enter contact\'s email</string>
+    <string name="no_contacts_to_show">No contacts available to show</string>
+
     <!-- Chat screen -->
     <string name="Keyboard_Hint">Type here</string>
     <string name="Username_Placeholder">Username</string>
