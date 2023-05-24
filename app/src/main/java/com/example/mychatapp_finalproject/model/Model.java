@@ -1,10 +1,9 @@
-package com.example.mychatapp_finalproject.common;
+package com.example.mychatapp_finalproject.model;
 
 import androidx.annotation.NonNull;
 
 public enum Model {
-    CAPTAIN("Copilot"),
-    COPILOT("Pilot");
+    USER_PROFILE("UserProfile");
 
     private final String model;
 

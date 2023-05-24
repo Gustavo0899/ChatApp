@@ -1,6 +1,6 @@
 package com.example.mychatapp_finalproject.database;
 
-import com.example.mychatapp_finalproject.common.Model;
+import com.example.mychatapp_finalproject.model.Model;
 
 /**
  * IDatabaseHelper is a wrapper of any specific implementation of a database

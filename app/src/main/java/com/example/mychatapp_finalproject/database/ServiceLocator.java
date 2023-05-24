@@ -2,6 +2,7 @@ package com.example.mychatapp_finalproject.database;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.example.mychatapp_finalproject.model.UserProfile;
 import com.google.firebase.auth.FirebaseAuth;
 
 /**
@@ -33,9 +34,10 @@ public class ServiceLocator {
     }
     
     public AwesomeValidation getValidator() {
-        if (validator == null) {
-            validator = new AwesomeValidation(ValidationStyle.BASIC);
-        }
-        return validator;
+        return new AwesomeValidation(ValidationStyle.BASIC);
+    }
+
+    public UserProfile getNewUserProfile() {
+        return new UserProfile();
     }
 }

@@ -1,4 +1,4 @@
-package com.example.mychatapp_finalproject.ui.home;
+package com.example.mychatapp_finalproject.ui.registration;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,14 +14,18 @@ import android.widget.Toast;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.example.mychatapp_finalproject.R;
 
+import com.example.mychatapp_finalproject.database.IDatabaseHelper;
 import com.example.mychatapp_finalproject.database.ServiceLocator;
+import com.example.mychatapp_finalproject.model.Model;
+import com.example.mychatapp_finalproject.model.UserProfile;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SignUpActivity extends AppCompatActivity {
-    private String TAG = "SignUpActivity";
+    private final String TAG = "SignUpActivity";
     EditText etEmail, etPass, etUsername, etPass2;
     Button btnSignup;
     FirebaseAuth firebaseAuth;
@@ -62,8 +66,7 @@ public class SignUpActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(SignUpActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
-//                                    Intent i = new Intent(SignUpActivity.this, LoginActivity.class);
-//                                    startActivity(i);
+                                    createUserProfile(username);
                                     Log.d(TAG, "Registration Successful");
                                     finish();
                                 } else {
@@ -72,15 +75,28 @@ public class SignUpActivity extends AppCompatActivity {
                                 }
                             }
                         });
-
                     } else {
                         Toast.makeText(SignUpActivity.this, "The password and confirmation do not match", Toast.LENGTH_SHORT).show();
-
                     }
                 } else {
                     Toast.makeText(SignUpActivity.this, "Please enter all the fields", Toast.LENGTH_LONG).show();
                 }
             }
         });
+    }
+
+    private void createUserProfile(String username) {
+        IDatabaseHelper databaseHelper = ServiceLocator.getInstance().getDatabase();
+        FirebaseUser user = ServiceLocator.getInstance().getFirebaseAuth().getCurrentUser();
+        if (user != null) {
+            UserProfile userProfile = ServiceLocator.getInstance().getNewUserProfile();
+            userProfile.setId(user.getUid());
+            userProfile.setUsername(username);
+            Log.d(TAG, "User id: " + user.getUid() + "\nUsername: " + username);
+            databaseHelper.create(user.getUid(), Model.USER_PROFILE, userProfile);
+            Log.d(TAG, "User profile created");
+        } else {
+            Log.d(TAG, "No logged-in user found");
+        }
     }
 }

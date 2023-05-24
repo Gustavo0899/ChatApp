@@ -1,4 +1,4 @@
-package com.example.mychatapp_finalproject.ui.home;
+package com.example.mychatapp_finalproject.ui.registration;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +23,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
-    private String TAG = "LoginActivity";
+    private final String TAG = "LoginActivity";
     AwesomeValidation awesomeValidation;
     FirebaseAuth firebaseAuth;
     EditText etEmail, etPass;
@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "You are in", Toast.LENGTH_LONG).show();
                                 Log.d(TAG, "You are in");
 
-                            }else{
+                            } else {
                                 Toast.makeText(LoginActivity.this, "Internal Error. Try again", Toast.LENGTH_LONG).show();
                                 Log.d(TAG, "Internal error: " + task.getException());
                             }
