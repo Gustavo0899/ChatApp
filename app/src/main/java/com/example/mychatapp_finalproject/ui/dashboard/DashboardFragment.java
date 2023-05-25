@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -78,6 +79,7 @@ public class DashboardFragment extends Fragment implements DialogButtonClickList
 
         // scroll to the top of the recyclerView to show added item
         recyclerView.scrollToPosition(0);
+        Toast.makeText(getActivity(), "Successfully added contact", Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -62,7 +62,7 @@ public class AddContactDialogFragment extends DialogFragment {
         FirebaseUser loggedUser = ServiceLocator.getInstance().getFirebaseAuth().getCurrentUser();
         IDatabaseHelper databaseHelper = ServiceLocator.getInstance().getDatabase();
         if (loggedUser != null) {
-            databaseHelper.getModelWithSameEmail(email, Model.USER_PROFILE, new ICallback() {
+            databaseHelper.getUserWithSameEmail(email, Model.USER_PROFILE, new ICallback() {
                 @Override
                 public <T> void onCallback(T callback) {
                     UserProfile userProfileWithSameEmail = (UserProfile) callback;
@@ -80,7 +80,7 @@ public class AddContactDialogFragment extends DialogFragment {
         }
     }
 
-    private void addContactToContactList(IDatabaseHelper databaseHelper, FirebaseUser loggedUser, String contactId) {
+    private void addContactToContactList(@NonNull IDatabaseHelper databaseHelper, @NonNull FirebaseUser loggedUser, String contactId) {
         databaseHelper.getModel(loggedUser.getUid(), Model.USER_PROFILE, UserProfile.class, new ICallback() {
             @Override
             public <t> void onCallback(t callback) {

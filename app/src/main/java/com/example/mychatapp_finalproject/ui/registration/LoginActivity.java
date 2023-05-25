@@ -56,28 +56,33 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (awesomeValidation.validate()){
-                    String mail = etEmail.getText().toString();
-                    String pass = etPass.getText().toString();
+                if (awesomeValidation.validate()) {
+                    try {
+                        String mail = etEmail.getText().toString();
+                        String pass = etPass.getText().toString();
 
-                    firebaseAuth.signInWithEmailAndPassword(mail, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
-                                Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                                startActivity(i);
-                                Toast.makeText(LoginActivity.this, "You are in", Toast.LENGTH_LONG).show();
-                                Log.d(TAG, "You are in");
+                        firebaseAuth.signInWithEmailAndPassword(mail, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                                    startActivity(i);
+                                    Toast.makeText(LoginActivity.this, "You are in", Toast.LENGTH_LONG).show();
+                                    Log.d(TAG, "You are in");
 
-                            } else {
-                                Toast.makeText(LoginActivity.this, "Internal Error. Try again", Toast.LENGTH_LONG).show();
-                                Log.d(TAG, "Internal error: " + task.getException());
+                                } else {
+                                    Toast.makeText(LoginActivity.this, "Internal Error. Try again", Toast.LENGTH_LONG).show();
+                                    Log.d(TAG, "Internal error: " + task.getException());
+                                }
                             }
-                        }
-                    });
+                        });
+                    } catch (Exception e) {
+                        Toast.makeText(LoginActivity.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
+
 
 //        btnForgetPass.setOnClickListener(new View.OnClickListener() {
 //            @Override

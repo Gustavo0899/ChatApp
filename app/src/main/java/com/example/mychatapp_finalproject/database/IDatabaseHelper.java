@@ -10,18 +10,9 @@ public interface IDatabaseHelper {
     <T> void create(String id, Model model, T data);
     <T> void update(String id, Model model, T data);
     void delete(String id, Model model);
-
-    /**
-     * Method to only get data if you don't need to use a model's methods
-     */
-    void getDataOfModel(String id, Model model, ICallback callback);
-    void getDataOfAllOfModel(Model model, ICallback callback);
-
-    /**
-     * Method to get the model and use its methods
-     */
     <T> void getModel(String id, Model model, Class<T> clazz, ICallback callback);
     <T> void getAllOfModel(Model model, Class<T> clazz, ICallback callback);
-    void getModelWithSameEmail(String email, Model model, ICallback callback);
+    void getUserWithSameEmail(String email, Model model, ICallback callback);
     void getAllContactsOfUser(ArrayList<String> modelsId, Model model, ICallback callback);
+    void getAllMessagesOfChat(ArrayList<String> modelsId, Model model, ICallback callback);
 }

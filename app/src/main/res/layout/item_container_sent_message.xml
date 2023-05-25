@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="4dp">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ProfilePic"
+        android:id="@+id/profile_pic"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@color/white"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_profile_pic"
         android:layout_alignParentEnd="true"
-        android:layout_alignBottom="@+id/sentMessage"/>
+        android:layout_alignBottom="@+id/message"/>
 
     <TextView
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="15sp"
         android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/sentMessage"
+        android:layout_alignEnd="@+id/message"
         android:hint="@string/Username_Placeholder"/>
 
     <TextView
-        android:id="@+id/sentMessage"
+        android:id="@+id/message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/background_sent_message"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="15sp"
         android:padding="10dp"
         android:layout_below="@+id/username"
-        android:layout_toStartOf="@+id/ProfilePic"
+        android:layout_toStartOf="@+id/profile_pic"
         android:hint="@string/Sent_Message"/>
     
     <TextView
-        android:id="@+id/textDateTime"
+        android:id="@+id/dateTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="11sp"
-        android:layout_below="@+id/sentMessage"
-        android:layout_alignEnd="@+id/sentMessage"
+        android:layout_below="@+id/message"
+        android:layout_alignEnd="@+id/message"
         android:hint="@string/Sent_Date"/>
 
 </RelativeLayout>

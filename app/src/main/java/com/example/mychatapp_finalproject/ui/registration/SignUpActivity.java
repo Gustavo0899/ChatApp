@@ -54,32 +54,36 @@ public class SignUpActivity extends AppCompatActivity {
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String mail = etEmail.getText().toString();
-                String pass = etPass.getText().toString();
-                String pass2 = etPass2.getText().toString();
-                String username = etUsername.getText().toString();
+                try {
+                    String mail = etEmail.getText().toString();
+                    String pass = etPass.getText().toString();
+                    String pass2 = etPass2.getText().toString();
+                    String username = etUsername.getText().toString();
 
-                if (awesomeValidation.validate()) {
-                    if (pass.equals(pass2)) {
-                        firebaseAuth.createUserWithEmailAndPassword(mail, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(SignUpActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
-                                    createUserProfile(username);
-                                    Log.d(TAG, "Registration Successful");
-                                    finish();
-                                } else {
-                                    Toast.makeText(SignUpActivity.this, "Internal Error. Try again", Toast.LENGTH_LONG).show();
-                                    Log.d(TAG, "Internal error: " + task.getException());
+                    if (awesomeValidation.validate()) {
+                        if (pass.equals(pass2)) {
+                            firebaseAuth.createUserWithEmailAndPassword(mail, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(SignUpActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                                        createUserProfile(username);
+                                        Log.d(TAG, "Registration Successful");
+                                        finish();
+                                    } else {
+                                        Toast.makeText(SignUpActivity.this, "Internal Error. Try again", Toast.LENGTH_LONG).show();
+                                        Log.d(TAG, "Internal error: " + task.getException());
+                                    }
                                 }
-                            }
-                        });
+                            });
+                        } else {
+                            Toast.makeText(SignUpActivity.this, "The password and confirmation do not match", Toast.LENGTH_SHORT).show();
+                        }
                     } else {
-                        Toast.makeText(SignUpActivity.this, "The password and confirmation do not match", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignUpActivity.this, "Please enter all the fields", Toast.LENGTH_LONG).show();
                     }
-                } else {
-                    Toast.makeText(SignUpActivity.this, "Please enter all the fields", Toast.LENGTH_LONG).show();
+                } catch (Exception e) {
+
                 }
             }
         });
