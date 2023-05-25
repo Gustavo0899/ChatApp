@@ -23,6 +23,8 @@ import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -112,6 +114,17 @@ public class ChatConvoActivity extends AppCompatActivity {
                 @Override
                 public <T> void onCallback(T callback) {
                     List<UserMessage> messages = (List<UserMessage>) callback;
+                    if (!messages.isEmpty()) {
+                        Log.d(TAG, "Messages num: " + messages.size());
+                        UserMessage message = messages.get(0);
+                        Log.d(TAG, "Message date: " + message.getCreatedAt());
+                        Collections.sort(messages, new Comparator<UserMessage>() {
+                            @Override
+                            public int compare(UserMessage obj1, UserMessage obj2) {
+                                return obj1.getCreatedAt().compareTo(obj2.getCreatedAt());
+                            }
+                        });
+                    }
                     adapter.updateData(messages);
                 }
             });
@@ -126,7 +139,8 @@ public class ChatConvoActivity extends AppCompatActivity {
         String id = UUID.randomUUID().toString();
         UserMessage message = ServiceLocator.getInstance().getNewUserMessage();
         message.setId(id);
-        message.setCreatedAt(new Timestamp(new Date()).toDate().toString());
+        String date = new Timestamp(new Date()).toDate().toString();
+        message.setCreatedAt(date);
         message.setContent(content);
         message.setSenderId(user.getUid());
         message.setReceiverId(contactId);

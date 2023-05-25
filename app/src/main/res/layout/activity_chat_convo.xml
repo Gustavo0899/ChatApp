@@ -7,13 +7,6 @@
     android:layout_height="match_parent"
     android:background="@color/blue_dark_background"
     tools:context=".ui.chat.ChatConvoActivity">
-
-<!--    <View-->
-<!--        android:id="@+id/ConvoBackground"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_height="620dp"-->
-<!--        android:background="@drawable/convo_background"/>-->
     
     <ImageView
         android:id="@+id/imageBack"
@@ -57,8 +50,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/chatRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="631dp"
-            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content"
             android:paddingBottom="56dp"
             android:padding="15dp" />
     </ScrollView>
